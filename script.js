@@ -112,10 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Pesan WhatsApp yang dinamis
-    let msg = `*Halo, saya ${nama}*%0A`;
-    msg += `*Mau pesan:*%0A${pesan}`;
-    msg += `*Total:* Rp${total.toLocaleString()}%0A%0A`;
-    msg += `*Metode:* ${metode === "delivery" ? "Diantar (Delivery)" : "Ambil Sendiri (Pick Up)"}%0A`;
+    let msg = `*Halo, saya ${nama}*\n`;
+    msg += `*Mau pesan:*\n${pesan}`;
+    msg += `*Total:* Rp${total.toLocaleString()}\n\n`;
+    msg += `*Metode:* ${metode === "delivery" ? "Diantar (Delivery)" : "Ambil Sendiri (Pick Up)"}\n`;
 
     if (metode === "delivery") {
       msg += `*Alamat:* ${alamat}%0A`;
@@ -123,8 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     msg += `%0A*Mohon bantuannya ya, terima kasih!*`;
 
-    window.open(
-      `https://wa.me/${tokoConfig.nomorWA}?text=${encodeURIComponent(msg)}`,
-    );
+    const url = `https://wa.me/${tokoConfig.nomorWA}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
   });
 });
