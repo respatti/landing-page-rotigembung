@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cart.forEach((item) => {
       const subtotal = item.harga * item.qty;
       total += subtotal;
-      pesan += `- ${item.nama} x${item.qty} (Rp ${subtotal.toLocaleString()})%0A`;
+      pesan += `- ${item.nama} x${item.qty} (Rp ${subtotal.toLocaleString()})\n`;
     });
 
     // Pesan WhatsApp yang dinamis
@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
     msg += `*Metode:* ${metode === "delivery" ? "Diantar (Delivery)" : "Ambil Sendiri (Pick Up)"}\n`;
 
     if (metode === "delivery") {
-      msg += `*Alamat:* ${alamat}%0A`;
+      msg += `*Alamat:* ${alamat}\n`;
     }
 
-    msg += `%0A*Mohon bantuannya ya, terima kasih!*`;
+    msg += `\n*Mohon bantuannya ya, terima kasih!*`;
 
     const url = `https://wa.me/${tokoConfig.nomorWA}?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
