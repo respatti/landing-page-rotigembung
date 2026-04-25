@@ -1,0 +1,148 @@
+/* ==========================================================================
+   1. GLOBAL & RESET
+   ========================================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Quicksand', sans-serif; background: #fffaf0; color: #333; padding-bottom: 90px;line-height: 1.6; }
+.container { max-width: 600px; margin: auto; padding: 20px; }
+
+/* 2. HERO & TITLE */
+/* ===================== */
+.hero { 
+    background: linear-gradient(135deg, #e67e22, #d35400); /* Gradasi */
+    color: white; 
+    text-align: center; 
+    padding: 50px 20px; 
+    border-bottom-left-radius: 30px; /* Lengkungan modern */
+    border-bottom-right-radius: 30px;
+}
+
+.hero h1 { 
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+
+.hero h2 { 
+    font-size: 1.2rem; 
+    margin-bottom: 5px; 
+    font-weight: 600; 
+}
+
+.hero p { 
+    font-size: 0.95rem; 
+    opacity: 0.9; 
+}
+
+.section-title { 
+    text-align: center; 
+    margin: 30px 0 20px 0; 
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* ==========================================================================
+   3. PRODUK SLIDER (Kartu Produk)
+   ========================================================================== */
+.product-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 5px 25px 5px;
+    margin-bottom: 25px;
+    -webkit-overflow-scrolling: touch;
+}
+.product-grid::-webkit-scrollbar { display: none; }
+
+.product-card {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+.product-card img { 
+    width: 100%; 
+    aspect-ratio: 1/1; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    display: block; 
+    margin-bottom: 10px;
+}
+.product-card h3 { font-size: 1rem; margin-bottom: 5px; flex-grow: 1; }
+.product-card p { color: #e67e22; font-weight: bold; margin-bottom: 10px; }
+
+/* ==========================================================================
+   4. CART & FORM (Kontainer Seragam)
+   ========================================================================== */
+.cart, .order-form {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    margin-bottom: 25px; /* Memberi jarak antar kotak */
+}
+
+/* Keranjang Detail */
+.cart-item { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #eee; }
+.qty-btn { width: 28px; height: 28px; background: #e67e22; border: none; color: white; border-radius: 6px; cursor: pointer; }
+
+/* Form */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 0.85rem; margin-bottom: 5px; color: #666; }
+input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+
+.delivery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.delivery-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.delivery-card:has(input:checked) {
+    border-color: #e67e22;
+    background: #fff5eb;
+}
+
+.delivery-card input { display: none; }
+
+.alamat-input { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    margin-top: 10px; 
+}
+
+.hidden { 
+    display: none; 
+}
+
+/* ==========================================================================
+   5. BUTTONS & UI ELEMENTS
+   ========================================================================== */
+.btn-cta { 
+    width: 100%; padding: 14px; background: #25D366; color: white; 
+    border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 25px; 
+}
+.cart-badge { 
+    position: fixed; top: 15px; right: 15px; background: red; color: white; 
+    width: 40px; height: 40px; border-radius: 50%; display: flex; 
+    justify-content: center; align-items: center; font-weight: bold; 
+    text-decoration: none; z-index: 2000; box-shadow: 0 3px 6px rgba(0,0,0,0.2); 
+}

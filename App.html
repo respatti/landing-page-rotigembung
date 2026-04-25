@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahla Roti Gembung</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1 id="judulToko"></h1>
+      <h2>Premium Roti Gembung</h2>
+      <p>Lembutnya Bikin Nagih</p>
+    </header>
+
+    <a href="#keranjang" class="cart-badge" id="cartBadge">0</a>
+
+    <div class="container">
+      <h2 class="section-title">Produk Kami</h2>
+      <div id="product-grid" class="product-grid"></div>
+
+      <div class="cart" id="keranjang">
+        <h3>🛒 Keranjang Pesanan</h3>
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+            <p>Total: <strong>Rp <span id="totalHarga">0</span></strong></p>
+            <p class="warning" id="pesanOngkir" style="display: none;">*Belum termasuk ongkir</p>
+        </div>
+
+        <form id="orderForm">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Masukkan nama Anda"
+              required
+            />
+          </div>
+          <div class="delivery-section">
+            <p><strong>Opsi:</strong></p>
+
+            <div class="delivery-grid">
+              <label class="delivery-card">
+                <input
+                  type="radio"
+                  name="pengiriman"
+                  value="pickup"
+                  checked
+                  onclick="toggleAlamat(false)"
+                />
+                <div class="card-content">
+                  <span>🏠 Pick Up</span>
+                  <small>(ambil sendiri)</small>
+                </div>
+              </label>
+
+              <label class="delivery-card">
+                <input
+                  type="radio"
+                  name="pengiriman"
+                  value="delivery"
+                  onclick="toggleAlamat(true)"
+                />
+                <div class="card-content">
+                  <span>🚚 Delivery</span>
+                  <small>(diantar ke alamat)</small>
+                </div>
+              </label>
+            </div>
+
+            <div id="alamatContainer" class="hidden">
+              <input
+                type="text"
+                placeholder="Masukkan alamat lengkap pengiriman"
+                class="alamat-input"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn-cta">PESAN VIA WHATSAPP</button>
+        </form>
+        
+       
+      </div>
+
+      
+
+        
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
